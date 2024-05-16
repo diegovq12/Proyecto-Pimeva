@@ -39,6 +39,13 @@ body.dark{
 }
 
 /* ===== Sidebar ===== */
+.nav {
+    /* Otros estilos para la barra de navegación */
+    overflow-y: scroll; /* Permite que aparezca la barra de desplazamiento vertical si es necesario */
+    /* O puedes usar overflow: auto; para permitir tanto la barra de desplazamiento horizontal como vertical si es necesario */
+}
+
+
 .sidebar{
     position:fixed;
     top: 0;
@@ -286,4 +293,21 @@ body.dark .switch::before{
 .sidebar.close ~ .home{
     left: 88px;
     width: calc(100% - 88px);
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar{
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .sidebar .menu-bar{
+        height: 50px;
+    }
+
+    .sidebar .menu-bar .mode{
+        display: flex;
+        justify-content: space-between;
+    }
+
 }

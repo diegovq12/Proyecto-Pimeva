@@ -11,7 +11,7 @@ function submitForm() {
         window.location.href = "../index.html";
     } else {
         alert("Usuario o contraseña incorrectos");
-        document.getElementById('matriculaInput').value = "Incorrecto";
+        document.getElementById('matriculaInput').value = "";
         document.getElementById('floatingPassword').value = "";
     }
 }
