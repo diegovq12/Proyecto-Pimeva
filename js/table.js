@@ -18,24 +18,24 @@ document.addEventListener('DOMContentLoaded', function () {
         ['BBC NORFOLK', 132, 'TBC', '02/04 00:00', 'TBC', 'TBC', 'TBC', 'TBC', 'SUBMARINE CABLE | CONT. SOCK 32,000 TM']
     ];
 
-    // configuracion de la tabla
+// configuracion de la tabla
     const container = document.getElementById('hot');
     const hot = new Handsontable(container, {
-        data: data,
-        rowHeaders: true,
-        colHeaders: true,
-        licenseKey: 'non-commercial-and-evaluation',
+        data: data, 
+        rowHeaders: true, 
+        colHeaders: true, 
+        licenseKey: 'non-commercial-and-evaluation', 
         colWidths: [150, 80, 120, 120, 120, 120, 120, 120, 400], // ancho de las columnas
         rowHeights: 35, // alto de las filas
         stretchH: 'all', // estirar las columnas
-        className: 'htCenter htMiddle',
-        cells: function (row, col) {
+        className: 'htCenter htMiddle', // centrar el texto
+        cells: function (row, col) { // estilos de las celdas
             var cellProperties = {};
-            if (row === 0) {
+            if (row === 0) { // primera fila
                 cellProperties.renderer = "html";
                 cellProperties.className = 'htCenter htMiddle';
             }
-            if (row === 11) {
+            if (row === 11) { // ultima fila
                 cellProperties.renderer = "html";
                 cellProperties.className = 'highlight';
             }
