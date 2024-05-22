@@ -1,4 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* 
+root = raiz del documento
+body = cuerpo del documento
+.sidebar = barra lateral
+.sidebar.close = barra lateral cerrada
+.sidebar .text = texto de la barra lateral
+.sidebar.close .text = texto de la barra lateral cerrada
+.sidebar .image = imagen de la barra lateral
+.sidebar li = elementos de la barra lateral
+.sidebar li .icon = icono de los elementos de la barra lateral
+.sidebar li .text = texto de los elementos de la barra lateral
+.sidebar header = encabezado de la barra lateral
+.sidebar .image-text img = imagen del encabezado de la barra lateral
+.sidebar header .image-text = imagen y texto del encabezado de la barra lateral
+.header-text .name = nombre del encabezado de la barra lateral
+.header-text .profession = profesión del encabezado de la barra lateral
+.sidebar header .toggle = botón de alternancia del encabezado de la barra lateral
+.sidebar.close header .toggle = botón de alternancia del encabezado de la barra lateral cerrado
+.sidebar header .toggle i = icono del botón de alternancia del encabezado de la barra lateral
+body.dark .sidebar header .toggle = botón de alternancia del encabezado de la barra lateral en modo oscuro
+.sidebar .search-box = cuadro de búsqueda de la barra lateral
+.search-box input = entrada del cuadro de búsqueda
+.sidebar li a = enlaces de los elementos de la barra lateral
+.sidebar li a:hover = enlaces de los elementos de la barra lateral al pasar el ratón por encima
+.sidebar .menu-bar = barra de menú de la barra lateral
+.menu-bar .mode = modo de la barra de menú de la barra lateral
+.menu-bar .mode .moon-sun = luna y sol del modo de la barra de menú de la barra lateral
+.menu-bar .mode i = icono del modo de la barra de menú de la barra lateral
+.menu-bar .mode i.sun = icono del sol del modo de la barra de menú de la barra lateral
+.menu-bar .mode .toggle-switch = botón de alternancia del modo de la barra de menú de la barra lateral
+.toggle-switch .switch = interruptor del botón de alternancia del modo de la barra de menú de la barra lateral
+.switch::before = interruptor del botón de alternancia del modo de la barra de menú de la barra lateral
+body.dark .switch::before = interruptor del botón de alternancia del modo de la barra de menú de la barra lateral en modo oscuro
+.home = página principal
+.home .text = texto de la página principal
+.sidebar.close ~ .home = página principal con la barra lateral cerrada
+ */
+
 
 *{
     font-family:"Poppins", sans-serif;
@@ -11,7 +49,7 @@
     /* ===== Colors ===== */
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
-    --primary-color: #124072; 
+    --primary-color: #124072;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
@@ -34,8 +72,8 @@ body.dark{
     --sidebar-color: #242526;
     --primary-color: #3A3B3C; 
     --primary-color-light: #3A3B3C;
-    --toggle-color: #fff;
-    --text-color: #ccc;
+    --toggle-color: #fff; 
+    --text-color: #ccc; 
 }
 
 /* ===== Sidebar ===== */

@@ -1,0 +1,74 @@
+:root{                  
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #124072;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ===== Transition ===== */
+    --tran-02: all 0.3s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+    
+}
+
+.container{
+    color: var(--toggle-color);
+    width: 80%;
+    border-radius: 10px;
+    background-color: var(--sidebar-color);
+    position: relative;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    
+}
+
+.container .title{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.register-container{
+    text-align: center;
+}
+
+.container > .group{
+    color: transparent;
+    width: 500%;
+    border-radius: 10px;
+    background-color: var(--sidebar-color);
+    position:fixed;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    align-items: center;
+}
+
+.form-group{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex: 1 0 21%;
+}
+
+.input-group .icon {
+    margin-right: 5px; 
+    margin-left: 15px;
+} 
+
+button{
+    background-color: blue;
+    /* text-color: white; */
+}
