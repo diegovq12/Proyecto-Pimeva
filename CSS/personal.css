@@ -26,6 +26,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -45,8 +46,11 @@
     border: none;
     margin: 10px 0 0 0;
     background-color: var(--primary-color-light);
-    font-weight: normal;
     text-align: center;
+    color: var(--text-color);
+}
+
+.register-container input::placeholder {
     color: var(--text-color);
 }
 
