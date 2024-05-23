@@ -1,4 +1,5 @@
-:root{                  
+
+:root {
     /* ===== Colors ===== */
     --body-color: #E4E9F7;
     --sidebar-color: #FFF;
@@ -12,10 +13,10 @@
     --tran-03: all 0.3s ease;
     --tran-04: all 0.4s ease;
     --tran-05: all 0.5s ease;
-    
+
 }
 
-.container{
+.container {
     color: var(--toggle-color);
     width: 80%;
     border-radius: 10px;
@@ -25,33 +26,86 @@
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    
+
 }
 
-.container .title{
-    font-size: 20px;
-    margin-top: 20px;
+.container .title {
+    font-size: 30px;
+    color: var(--text-color);
+    margin-left: 20px;
 }
 
-.register-container{
+.register-container {
     text-align: center;
 }
 
-
-.container > .group{
-    color: transparent;
-    width: 500%;
-    border-radius: 10px;
-    background-color: var(--sidebar-color);
-    position:fixed;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
+.register-container input {
     padding: 10px;
-    align-items: center;
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0 0 0;
+    background-color: var(--primary-color-light);
+    font-weight: normal;
+    text-align: center;
+    color: var(--text-color);
 }
 
-button{
-    background-color: blue;
-    /* text-color: white; */
+.register-container input:focus {
+    outline:none ;
+}
+
+.register-container .icon {
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.group {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+    /* margin: 10px 0 0 0; */
+}
+
+
+.input-group .icon{
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.input-group input{
+    width: 75%;
+    font-size:1rem;
+
+}
+
+.botones {
+    max-width: 250px;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    margin: 10px 0 0 0;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+}
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+    }
+
+    .group {
+        grid-template-columns: 1fr;
+    }
 }
