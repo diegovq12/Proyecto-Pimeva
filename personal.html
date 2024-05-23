@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
     <link rel="stylesheet" href="CSS/sidebar-styles.css">
+    <link rel="stylesheet" href="CSS/personal.css">
+    <link rel="stylesheet" href="CSS/tableStyle.css">
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -33,7 +35,7 @@
             <div class="menu">
                 <li class="search-box">
                     <i class='bx bx-search-alt-2 icon'></i>
-                    <input type="search" placeholder="Search...">
+                    <input type="search" placeholder="Buscar...">
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
@@ -65,7 +67,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="sign-in/login.html">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Cerrar Sesion</span>
                     </a>
@@ -87,6 +89,33 @@
 
     <section class="home">
         <div class="text">Administracion de Personal</div>
+        <div class="container">
+            <p class="title">Registro de usuarios</p>
+            <div class="register-container">
+                <form action="">
+                    <div class="group">
+                        <div class="input-group">
+                            <i class='bx bxs-user icon'></i>
+                            <input type="text" placeholder="Nombre">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-phone icon'></i>
+                            <input type="tel" placeholder="Numero Telefonico">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bx-home-alt icon'></i>
+                            <input type="text" placeholder="Agencia">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-cable-car icon'></i>
+                            <input type="text" placeholder="Buque Asociado">
+                        </div>
+                    </div>
+                    <button class="botones">Registrar </button>
+                </form>
+            </div>
+        </div>
+        </div>
     </section>
 
     <script src="js/sidebar.js"></script>
