@@ -50,7 +50,9 @@
     color: var(--text-color);
 }
 
-
+.register-container input:focus {
+    outline:none ;
+}
 
 .register-container .icon {
     color: var(--text-color);
