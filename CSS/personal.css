@@ -50,24 +50,6 @@
     align-items: center;
 }
 
-.form-group{
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.input-group{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    flex: 1 0 21%;
-}
-
-.input-group .icon {
-    margin-right: 5px; 
-    margin-left: 15px;
-} 
-
 button{
     background-color: blue;
     /* text-color: white; */
