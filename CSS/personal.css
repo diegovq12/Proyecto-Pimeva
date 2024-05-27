@@ -26,6 +26,7 @@
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -45,8 +46,11 @@
     border: none;
     margin: 10px 0 0 0;
     background-color: var(--primary-color-light);
-    font-weight: normal;
     text-align: center;
+    color: var(--text-color);
+}
+
+.register-container input::placeholder {
     color: var(--text-color);
 }
 
@@ -99,6 +103,70 @@
     font-size: 20px;
 }
 
+.contenedor-usuarios {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contenedor-usuarios .title {
+    font-size: 30px;
+    color: var(--text-color);
+    margin-left: 20px;
+    padding: 10px 0;
+}
+
+.table-container {
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.table th:nth-child(1) {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table th:nth-child(5) {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.table tr:nth-child(even) {
+    background-color: var(--primary-color-light);
+
+}
+
+
+.contenedor-usuarios .botones-usuario{
+    max-width: 250px;
+    width: 80%;
+    padding: 5px 2px;
+    border-radius: 6px;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin: 10px 0 0 0;
+}
+/* .table th {
+    background-color: #f2f2f2;
+} */
+
 
 @media screen and (max-width: 480px) {
     .container {
@@ -107,5 +175,10 @@
 
     .group {
         grid-template-columns: 1fr;
+    }
+
+    .table-container .table{
+        width: 100%;
+        overflow-x: auto;
     }
 }
