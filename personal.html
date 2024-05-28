@@ -92,23 +92,23 @@
         <div class="container close">
             <p class="title">Registro de usuarios</p>
             <div class="register-container">
-                <form action="">
+                <form id="registro-usuarios" action="">
                     <div class="group">
                         <div class="input-group">
                             <i class='bx bxs-user icon'></i>
-                            <input type="text" placeholder="Nombre">
+                            <input type="text" id="nombre" placeholder="Nombre">
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-phone icon'></i>
-                            <input type="tel" placeholder="Numero Telefonico">
+                            <input type="tel" id="cel" placeholder="Numero Telefonico">
                         </div>
                         <div class="input-group">
                             <i class='bx bx-home-alt icon'></i>
-                            <input type="text" placeholder="Agencia">
+                            <input type="text" id="agencia" placeholder="Agencia">
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-cable-car icon'></i>
-                            <input type="text" placeholder="Buque Asociado">
+                            <input type="text" id="buque" placeholder="Buque Asociado">
                         </div>
                     </div>
                     <button class="botones">Registrar </button>
@@ -121,7 +121,7 @@
             <p class="title">Usuarios Registrados</p>
             <div class="table-container">
                 <table class="table">
-                    <thead >
+                    <thead>
                         <tr>
                             <th>Nombre</th>
                             <th>Telefono</th>
@@ -130,7 +130,7 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabla-usuarios">
                         <tr>
                             <td>Ivan Hernandez</td>
                             <td>6361903616</td>
@@ -167,6 +167,7 @@
     </section>
 
     <script src="js/sidebar.js"></script>
+    <script src="js/registro-usuarios.js"></script>
 </body>
 
 </html>
