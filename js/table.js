@@ -1,6 +1,22 @@
 import Handsontable from 'handsontable';
 import 'handsontable/dist/handsontable.full.min.css';
 
+async function getDataTable() {
+    const response = await fetch('/operations');
+    const data = await response.json();
+    return data.map(operation => {
+        operation.vessel_id,
+        operation.loa,
+        operation.operation_time,
+        operation.eta,
+        operation.pob,
+        operation.etb,
+        operation.etc,
+        operation.etd,
+        operation.cargo
+    });
+}
+
 // datos de la tabla
 document.addEventListener('DOMContentLoaded', function () {
     const data = [ // datos estaticos
