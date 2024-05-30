@@ -29,6 +29,7 @@ body{
     background: var(--body-color);
 }
 
+
 body.dark{
     --body-color: #18191A;
     --sidebar-color: #242526;
@@ -37,7 +38,6 @@ body.dark{
     --toggle-color: #fff;
     --text-color: #ccc;
 }
-
 /* ===== Sidebar ===== */
 .nav {
     /* Otros estilos para la barra de navegación */

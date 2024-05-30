@@ -2,7 +2,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     event.preventDefault();
 });
 function submitForm() {
-    var matriculaDefecto = "372688";
+    var matriculaDefecto = "0000";
     var passwordDefecto = "1234";
     var matriculaInput = document.getElementById('matriculaInput').value;
     var passwordInput = document.getElementById('floatingPassword').value;
