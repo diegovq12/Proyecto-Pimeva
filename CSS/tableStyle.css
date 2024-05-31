@@ -12,18 +12,26 @@
 }
 
 .handsontable-container .ht_master .htCore td {
-    background-color: #f0f0f0; /* Color de fondo de las celdas */
-    color: #333; /* Color del texto en las celdas */
-    font-family: 'Poppins', sans-serif; /* Tipo de fuente */
+    background-color: #f0f0f0;
+    /* Color de fondo de las celdas */
+    color: #333;
+    /* Color del texto en las celdas */
+    font-family: 'Poppins', sans-serif;
+    /* Tipo de fuente */
 }
 
 /* Estilos para los encabezados de Handsontable dentro del contenedor */
-.handsontable-container .ht_master .htCore th{
-    background-color: #333; /* Color de fondo de los encabezados */
-    color: #fff; /* Color del texto en los encabezados */
-    font-weight: bold; /**/
+.handsontable-container .ht_master .htCore th {
+    background-color: #333;
+    /* Color de fondo de los encabezados */
+    color: #fff;
+    /* Color del texto en los encabezados */
+    font-weight: bold;
+    /**/
 }
+
 /* Personaliza las celdas de Handsontable */
 .handsontable .ht_master .htCore td {
-    border-color: #666; /* Color de borde más suave */
+    border-color: #666;
+    /* Color de borde más suave */
 }
