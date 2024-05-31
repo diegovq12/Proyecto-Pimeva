@@ -282,6 +282,7 @@ body.dark .switch::before {
     width: calc(100% - 250px);
     background: var(--body-color);
     transition: var(--tran-05);
+    overflow: hidden;  
 }
 
 .home .text {
@@ -290,33 +291,52 @@ body.dark .switch::before {
     color: var(--text-color);
     transition: var(--tran-04);
     padding: 8px 40px;
+}
 
+.info-home-container {
+    position: absolute;
+    left: 50%;
+    top: 20px; /* Ajusta según sea necesario */
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--text-color);
 }
 
 .info-home {
+    color: var(--text-color);
+}
+
+.container-dashboard {
     position: absolute;
+    top: calc(50% - 10px);
+    width: 100%;
+}
+
+
+
+.alert-info-container {
+    margin-top: 10px;
+    position: relative;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     text-align: center;
+    color: var(--text-color);
+}
+
+.info-text {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: var(--primary-color-light);
+    z-index: 1;
     color: var(--text-color);
 }
 
 .handsontable-container {
-    position: relative;
-    top: 3%;
-    /*En 3% tambien se ve bien, queda a tu criterio*/
+    margin-top: 20px; 
     text-align: center;
 }
-
-.alert-info {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: var(--text-color);
-}
-
 .sidebar.close~.home {
     left: 88px;
     width: calc(100% - 88px);
