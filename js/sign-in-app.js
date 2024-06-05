@@ -24,7 +24,7 @@ function submitForm() {
         if (usuarioEncontrado.rango === "Administrador") {
             window.location.href = "admin.html";
         }
-        else {
+        else if (usuarioEncontrado.rango === "Usuario"){
             window.location.href = "usuarios.html";
         }
     }
