@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/sidebar-styles.css">
+    <link rel="stylesheet" href="CSS/tableStyle.css">
+
+    <link href="img/logo.png" rel="icon" type="image/png">
+    <!-- Boxicons -->
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Inicio</title>
+
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="img/logo.png" alt="logo">
+                </span>
+                <div class="text header-text">
+                    <span class="name">Pimeva</span>
+                    <span class="profession">Agencia Portuaria</span>
+                </div>
+
+            </div>
+            <i class='bx bx-chevron-left toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search-alt-2 icon'></i>
+                    <input type="search" placeholder="Buscar...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <span class="text nav-text">Historial</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-share icon'></i>
+                            <span class="text nav-text">Exportar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="index.html">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Cerrar Sesion</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Modo Oscuro</span>
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Dashboard</div>
+        <div class="info-home-container">
+            <div class="info-home">
+                <p>ENSENADA - BAJA CALIFORNIA, MX. PORT LINE UP BERTH: ASIPONA #1</p>
+                <span id="current-date"></span>
+            </div>
+        </div>
+        <div class="container-dashboard">
+            <div class="alert-info-container">
+                <div class="alert-info">
+                    <p class="info-text">Above Schedule is tentative and Subject to changes with or without previous notice.
+                        (AGW WP)</p>
+                    <p class="info-text">Above information is provided in good faith with information currently available,
+                        provided by shipping lines and vessels, therefore is subject to change and if AGW/WP/WOG.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="hot" class="handsontable-container"></div>
+
+    </section>
+
+    <script type="module" src="js/table.js"></script>
+    <script src="server.js"></script>
+    <script src="js/sidebar.js"></script>
+</body>
+
+</html>

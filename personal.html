@@ -11,6 +11,8 @@
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <link href="img/logo.png" rel="icon" type="image/png">
+
     <title>Personal</title>
 
 </head>
@@ -39,7 +41,7 @@
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="index.html">
+                        <a href="admin.html">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -67,7 +69,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="sign-in/login.html">
+                    <a href="index.html">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Cerrar Sesion</span>
                     </a>
@@ -110,8 +112,18 @@
                             <i class='bx bxs-cable-car icon'></i>
                             <input type="text" id="buque" placeholder="Buque Asociado">
                         </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt icon'></i>
+                            <select name="rango" id="rango">
+                                <option value="Administrador">Administrador</option>
+                                <option value="Usuario">Usuario</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <button class="botones">Registrar </button>
+                        </div>
                     </div>
-                    <button class="botones">Registrar </button>
+
                 </form>
             </div>
         </div>
@@ -127,43 +139,29 @@
                             <th>Telefono</th>
                             <th>Agencia</th>
                             <th>Buque Asociado</th>
+                            <th>Rango</th>
+                            <th>Id</th>
+                            <th>Contraseña</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="tabla-usuarios">
-                        <tr>
-                            <td>Ivan Hernandez</td>
-                            <td>6361903616</td>
-                            <td>Conalep</td>
-                            <td>Bicho</td>
+                        <!-- <tr>
+                            <td>Nombre</td>
+                            <td>Telefono</td>
+                            <td>Agencia</td>
+                            <td>Buque Asociado</td>
+                            <td>Rango</td>
+                            <td>Id</td>
+                            <td>Contraseña</td>
                             <td>
-                                <button class="botones-usuario">Editar</button>
-                                <!-- <button class="botones-usuario">Eliminar</button> -->
+                                <button class="botones">Editar</button>
+                                <button class="botones">Eliminar</button>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>Diego Quiros</td>
-                            <td>6462563726</td>
-                            <td>Moderna</td>
-                            <td>Titanic</td>
-                            <td>
-                                <button class="botones-usuario">Editar</button>
-                                <!-- <button class="botones-usuario">Eliminar</button> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Kevin Roblox</td>
-                            <td>615</td>
-                            <td>Roblox</td>
-                            <td>Robux   </td>
-                            <td>
-                                <button class="botones-usuario">Editar</button>
-                                <!-- <button class="botones-usuario">Eliminar</button> -->
-                            </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
-        </div>
+            </div>
     </section>
 
     <script src="js/sidebar.js"></script>
