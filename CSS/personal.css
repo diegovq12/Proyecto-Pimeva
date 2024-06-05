@@ -7,6 +7,7 @@
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --user-buttons: #124072;
 
     /* ===== Transition ===== */
     --tran-02: all 0.3s ease;
@@ -14,6 +15,16 @@
     --tran-04: all 0.4s ease;
     --tran-05: all 0.5s ease;
 
+}
+
+body.dark {
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3A3B3C;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --user-buttons: #242526;
 }
 
 .container {
@@ -66,7 +77,7 @@
 .group {
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr ;
     gap: 0;
 }
 
@@ -82,6 +93,19 @@
 .input-group .icon{
     margin-right: 10px;
     font-size: 1.5rem;
+}
+
+.input-group select {
+    width: 75%;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    text-align: center;
+    cursor: pointer;
+    outline: none;
 }
 
 .input-group input{
@@ -141,7 +165,7 @@
     border-bottom-left-radius: 10px;
 }
 
-.table th:nth-child(5) {
+.table th:nth-child(8) {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -157,12 +181,14 @@
     width: 80%;
     padding: 5px 2px;
     border-radius: 6px;
-    background-color: var(--primary-color);
+    background-color: var(--user-buttons);
     color: white;
     cursor: pointer;
     border: none;
     margin: 10px 0 0 0;
 }
+
+
 /* .table th {
     background-color: #f2f2f2;
 } */

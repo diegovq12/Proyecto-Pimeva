@@ -343,6 +343,10 @@ body.dark .switch::before {
 }
 
 @media screen and (max-width: 480px) {
+    .home{
+        overflow:visible;  
+    }
+
     .sidebar {
         width: 100%;
         padding: 10px 20px;
