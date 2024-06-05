@@ -8,19 +8,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
     document.getElementById('current-date').textContent = currentDate.toLocaleDateString('es-MX', options);
 
-    const data = [
+    // Cargar datos desde localStorage o usar datos por defecto
+    const savedData = localStorage.getItem('tableData');
+    const defaultData = [
         ['VESSEL', 'LOA', 'OPERATION TIME', 'ETA', 'POB', 'ETB', 'ETC', 'ETD', 'CARGO'],
         ['Vessel 1', 200, '25:00', '01/06 12:00', '', '', '', '', 'Cargo 1'],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', ''],
-        ['', , '', '', '', '', '', '', '']
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', ''],
+        ['', '', '', '', '', '', '', '', '']
     ];
+    const data = savedData ? JSON.parse(savedData) : defaultData;
 
     const container = document.getElementById('hot');
     const hot = new Handsontable(container, {
@@ -50,13 +54,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
             changes.forEach(([row, prop, oldValue, newValue]) => {
                 if (prop === 2 || prop === 3) { // OPERATION TIME or ETA
-                    updateDates(row);
+                    if (isDateCollision(row)) {
+                        alert('Error: Las fechas y horas colisionan con otra entrada.');
+                        hot.setDataAtCell(row, prop, oldValue); // Revertir el cambio
+                    } else {
+                        updateDates(row);
+                    }
                 }
             });
+
+            // Guardar datos en localStorage después de cualquier cambio
+            localStorage.setItem('tableData', JSON.stringify(hot.getData()));
         }
     });
 
     function updateDates(row) {
+        if (isDateCollision(row)) {
+            return; // No realizar operaciones si hay colisiones
+        }
+
         const operationTime = hot.getDataAtCell(row, 2);
         if (!operationTime) {
             return;
@@ -99,5 +115,31 @@ document.addEventListener('DOMContentLoaded', function () {
         const hours = ('0' + date.getHours()).slice(-2);
         const minutes = ('0' + date.getMinutes()).slice(-2);
         return `${day}/${month} ${hours}:${minutes}`;
+    }
+
+    function isDateCollision(currentRow) {
+        const rows = hot.countRows();
+        const columns = [3, 4, 5, 6, 7]; // ETA, POB, ETB, ETC, ETD
+        const dates = columns.map(col => hot.getDataAtCell(currentRow, col)).map(parseDate);
+
+        for (let row = 1; row < rows; row++) {
+            if (row !== currentRow) {
+                const rowDates = columns.map(col => hot.getDataAtCell(row, col)).map(parseDate);
+                for (let i = 0; i < dates.length; i++) {
+                    if (dates[i] && rowDates[i] && (dates[i].getTime() === rowDates[i].getTime() || dates[i] < rowDates[i])) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    function parseDate(dateStr) {
+        if (!dateStr) return null;
+        const [datePart, timePart] = dateStr.split(' ');
+        const [day, month] = datePart.split('/').map(Number);
+        const [hours, minutes] = timePart.split(':').map(Number);
+        return new Date(2024, month - 1, day, hours, minutes);
     }
 });
