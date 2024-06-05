@@ -47,18 +47,29 @@ document.addEventListener('DOMContentLoaded', function () {
             { data: 7, type: 'text', readOnly: true }, // ETD
             { data: 8, type: 'text' } // CARGO
         ],
+        cells: function (row, col) {
+            const cellProperties = {};
+            if (row === 0) {
+                cellProperties.readOnly = true; // Hacer la primera fila de solo lectura
+            }
+            return cellProperties;
+        },
         afterChange: function (changes, source) {
             if (source === 'loadData') {
-                return; // don't do anything on initial load
+                return; // no hacer nada en la carga inicial
             }
 
             changes.forEach(([row, prop, oldValue, newValue]) => {
-                if (prop === 2 || prop === 3) { // OPERATION TIME or ETA
-                    if (isDateCollision(row)) {
-                        alert('Error: Las fechas y horas colisionan con otra entrada.');
-                        hot.setDataAtCell(row, prop, oldValue); // Revertir el cambio
+                if (prop === 2 || prop === 3) { // OPERATION TIME o ETA
+                    if (!newValue || newValue.trim() === '') {
+                        clearDependentCells(row);
                     } else {
-                        updateDates(row);
+                        if (isDateCollision(row)) {
+                            alert('Error: Las fechas y horas colisionan con otra entrada.');
+                            hot.setDataAtCell(row, prop, oldValue); // Revertir el cambio
+                        } else {
+                            updateDates(row);
+                        }
                     }
                 }
             });
@@ -69,19 +80,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function updateDates(row) {
-        if (isDateCollision(row)) {
-            return; // No realizar operaciones si hay colisiones
+        const operationTime = hot.getDataAtCell(row, 2);
+        const eta = hot.getDataAtCell(row, 3);
+
+        if (!operationTime || !eta) {
+            clearDependentCells(row);
+            return;
         }
 
-        const operationTime = hot.getDataAtCell(row, 2);
-        if (!operationTime) {
-            return;
+        if (isDateCollision(row)) {
+            return; // No realizar operaciones si hay colisiones
         }
 
         const [totalHours, minutes] = operationTime.split(':').map(Number);
 
         // POB = ETA + OPERATION TIME
-        let eta = hot.getDataAtCell(row, 3);
         if (eta && eta !== 'TBC') {
             const [etaDate, etaTime] = eta.split(' ');
             const [etaDay, etaMonth] = etaDate.split('/').map(Number);
@@ -115,6 +128,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const hours = ('0' + date.getHours()).slice(-2);
         const minutes = ('0' + date.getMinutes()).slice(-2);
         return `${day}/${month} ${hours}:${minutes}`;
+    }
+
+    function clearDependentCells(row) {
+        if (row > 0) {
+            ['POB', 'ETB', 'ETC', 'ETD'].forEach((col, index) => {
+                hot.setDataAtCell(row, index + 4, '');
+            });
+        }
     }
 
     function isDateCollision(currentRow) {
