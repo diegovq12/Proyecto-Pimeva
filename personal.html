@@ -11,6 +11,8 @@
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <link href="img/logo.png" rel="icon" type="image/png">
+
     <title>Personal</title>
 
 </head>
@@ -39,7 +41,7 @@
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="index.html">
+                        <a href="admin.html">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -67,7 +69,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="sign-in/login.html">
+                    <a href="index.html">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Cerrar Sesion</span>
                     </a>
@@ -89,36 +91,81 @@
 
     <section class="home">
         <div class="text">Administracion de Personal</div>
-        <div class="container">
+        <div class="container close">
             <p class="title">Registro de usuarios</p>
             <div class="register-container">
-                <form action="">
+                <form id="registro-usuarios" action="">
                     <div class="group">
                         <div class="input-group">
                             <i class='bx bxs-user icon'></i>
-                            <input type="text" placeholder="Nombre">
+                            <input type="text" id="nombre" placeholder="Nombre">
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-phone icon'></i>
-                            <input type="tel" placeholder="Numero Telefonico">
+                            <input type="tel" id="cel" placeholder="Numero Telefonico">
                         </div>
                         <div class="input-group">
                             <i class='bx bx-home-alt icon'></i>
-                            <input type="text" placeholder="Agencia">
+                            <input type="text" id="agencia" placeholder="Agencia">
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-cable-car icon'></i>
-                            <input type="text" placeholder="Buque Asociado">
+                            <input type="text" id="buque" placeholder="Buque Asociado">
+                        </div>
+                        <div class="input-group">
+                            <i class='bx bxs-lock-alt icon'></i>
+                            <select name="rango" id="rango">
+                                <option value="Administrador">Administrador</option>
+                                <option value="Usuario">Usuario</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <button class="botones">Registrar </button>
                         </div>
                     </div>
-                    <button class="botones">Registrar </button>
+
                 </form>
             </div>
         </div>
         </div>
+
+        <div class="contenedor-usuarios">
+            <p class="title">Usuarios Registrados</p>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Telefono</th>
+                            <th>Agencia</th>
+                            <th>Buque Asociado</th>
+                            <th>Rango</th>
+                            <th>Id</th>
+                            <th>Contraseña</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-usuarios">
+                        <!-- <tr>
+                            <td>Nombre</td>
+                            <td>Telefono</td>
+                            <td>Agencia</td>
+                            <td>Buque Asociado</td>
+                            <td>Rango</td>
+                            <td>Id</td>
+                            <td>Contraseña</td>
+                            <td>
+                                <button class="botones">Editar</button>
+                                <button class="botones">Eliminar</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
     </section>
 
     <script src="js/sidebar.js"></script>
+    <script src="js/registro-usuarios.js"></script>
 </body>
 
 </html>

@@ -6,12 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start":"serve -s dist"
   },
   "devDependencies": {
     "vite": "^5.2.11"
   },
   "dependencies": {
-    "handsontable": "^14.3.0"
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "handsontable": "^14.3.0",
+    "pg": "^8.11.5"
   }
 }
